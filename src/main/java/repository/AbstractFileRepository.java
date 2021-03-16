@@ -4,6 +4,8 @@ import domain.HasID;
 import validation.ValidationException;
 import validation.Validator;
 
+import java.util.List;
+
 public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends AbstractCRUDRepository<ID,E>{
     protected String filename;
 
@@ -17,7 +19,7 @@ public abstract class AbstractFileRepository<ID, E extends HasID<ID>> extends Ab
     protected abstract void writeToFileAll();
 
     @Override
-    public Iterable<E> findAll() {
+    public List<E> findAll() {
         loadFromFile();
         return super.findAll();
     }

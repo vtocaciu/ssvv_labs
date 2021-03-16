@@ -3,7 +3,9 @@ package repository;
 import domain.*;
 import validation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractCRUDRepository<ID, E extends HasID<ID>> implements CRUDRepository<ID, E>{
@@ -26,7 +28,7 @@ public abstract class AbstractCRUDRepository<ID, E extends HasID<ID>> implements
     }
 
     @Override
-    public Iterable<E> findAll() { return entities.values(); }
+    public List<E> findAll() { return new ArrayList<>(entities.values()); }
 
     @Override
     public E save(E entity) throws ValidationException {
