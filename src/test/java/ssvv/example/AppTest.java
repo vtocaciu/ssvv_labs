@@ -52,6 +52,13 @@ public class AppTest
         assertEquals(0, repository.findAll().size());
     }
 
+    @Test
+    public void tc_04()
+    {
+        repository = new StudentRepository(new StudentValidator());
+        repository.save(new Student("6", "", 9000));
+        assertEquals(0, repository.findAll().size());
+    }
 
     @Test
     public void tc_05()
@@ -59,6 +66,14 @@ public class AppTest
         repository = new StudentRepository(new StudentValidator());
         repository.save(new Student("6", "", 135));
         assertEquals(0, repository.findAll().size());
+    }
+
+    @Test
+    public void tc_06()
+    {
+        repository = new StudentRepository(new StudentValidator());
+        repository.save(new Student("6", "ana", 135));
+        assertEquals(1, repository.findAll().size());
     }
 
     @Test
