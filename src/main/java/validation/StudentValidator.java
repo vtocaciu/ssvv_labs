@@ -9,13 +9,13 @@ public class StudentValidator implements Validator<Student> {
         if (student.getNume() == null || student.getNume().equals("")) {
             throw new ValidationException("Nume invalid! \n");
         }
-        if (student.getEmail() == null || student.getEmail().equals("")) {
-            throw new ValidationException("Email invalid! \n");
-        }
-        if (student.getNameOfTheProfessor() == null || student.getNameOfTheProfessor().equals("")) {
-            throw new ValidationException("Nume prof invalid! \n");
-        }
-        if (student.getGrupa() <= 110 || student.getGrupa() >= 938) {
+//        if (student.getEmail() == null || student.getEmail().equals("")) {
+//            throw new ValidationException("Email invalid! \n");
+//        }
+//        if (student.getNameOfTheProfessor() == null || student.getNameOfTheProfessor().equals("")) {
+//            throw new ValidationException("Nume prof invalid! \n");
+//        }
+        if (student.getGrupa() < 100 || student.getGrupa() > 999) {
             throw new ValidationException("Grupa invalida! \n");
         }
     }

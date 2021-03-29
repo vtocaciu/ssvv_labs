@@ -25,6 +25,14 @@ public class Student implements HasID<String> {
         this.email = email;
     }
 
+    public Student(String idStudent, String nume, int grupa) {
+        this.idStudent = idStudent;
+        this.nume = nume;
+        this.grupa = grupa;
+        this.email = "";
+        this.nameOfTheProfessor = "";
+    }
+
     public Student(String idStudent, String nume, int grupa, String email, String nameOfTheProfessor) {
         this.idStudent = idStudent;
         this.nume = nume;
