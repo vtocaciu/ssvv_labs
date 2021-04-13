@@ -13,12 +13,7 @@ import validation.TemaValidator;
 
 public class IntegrationTest {
 
-    Service service;
-
-    @Before
-    public void setUp() {
-        service = new Service(new StudentRepository(new StudentValidator()), new TemaRepository(new TemaValidator()), new NotaRepository(new NotaValidator()));
-    }
+    Service service = new Service(new StudentRepository(new StudentValidator()), new TemaRepository(new TemaValidator()), new NotaRepository(new NotaValidator()));
 
     @Test
     public void IntegrationTestCase1() {
