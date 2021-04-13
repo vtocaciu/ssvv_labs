@@ -18,9 +18,9 @@ public class Main {
 
 
 
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        UI consola = new UI(service);
-        consola.run();
+       // Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+        //UI consola = new UI(service);
+        //consola.run();
 
         //PENTRU GUI
         // de avut un check: daca profesorul introduce sau nu saptamana la timp

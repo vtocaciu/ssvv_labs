@@ -8,17 +8,30 @@ import java.time.temporal.WeekFields;
 import java.util.Locale;
 
 public class Service {
-    private StudentXMLRepository studentXmlRepo;
-    private TemaXMLRepository temaXmlRepo;
-    private NotaXMLRepository notaXmlRepo;
+    private StudentRepository studentXmlRepo;
+    private TemaRepository temaXmlRepo;
+    private NotaRepository notaXmlRepo;
 
-    public Service(StudentXMLRepository studentXmlRepo, TemaXMLRepository temaXmlRepo, NotaXMLRepository notaXmlRepo) {
+    public Service(StudentRepository studentXmlRepo, TemaRepository temaXmlRepo, NotaRepository notaXmlRepo) {
         this.studentXmlRepo = studentXmlRepo;
         this.temaXmlRepo = temaXmlRepo;
         this.notaXmlRepo = notaXmlRepo;
     }
 
     public Iterable<Student> findAllStudents() { return studentXmlRepo.findAll(); }
+
+    public int getStudentSize() {
+        return  studentXmlRepo.findAll().size();
+    }
+
+
+    public int getTemaSize() {
+        return  temaXmlRepo.findAll().size();
+    }
+
+    public int getNotaSize() {
+        return  notaXmlRepo.findAll().size();
+    }
 
     public Iterable<Tema> findAllTeme() { return temaXmlRepo.findAll(); }
 
@@ -125,10 +138,10 @@ public class Service {
         }
         return 0;
     }
-
+/*
     public void createStudentFile(String idStudent, String idTema) {
         Nota nota = notaXmlRepo.findOne(new Pair(idStudent, idTema));
 
         notaXmlRepo.createFile(nota);
-    }
+    }*/
 }
