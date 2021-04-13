@@ -1,6 +1,7 @@
 package ssvv.example;
 
 import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 import repository.NotaRepository;
 import repository.StudentRepository;
@@ -14,16 +15,17 @@ public class IntegrationTest {
 
     Service service;
 
+    @Before
+    public void setUp() {
+        service = new Service(new StudentRepository(new StudentValidator()), new TemaRepository(new TemaValidator()), new NotaRepository(new NotaValidator()));
+    }
+
     @Test
     public void IntegrationTestCase1() {
-        service = new Service(new StudentRepository(new StudentValidator()), new TemaRepository(new TemaValidator()), new NotaRepository(new NotaValidator()));
         saveStudent_BigBang();
         saveTema_BigBang();
         saveNota_BigBang();
     }
-
-    @Test
-    public void IntegrationTestCase2(){}
 
     @Test
     public void saveStudent_BigBang()  {
